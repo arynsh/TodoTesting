@@ -1,5 +1,16 @@
-<app-todo-item *ngFor = "let todo of todos" [todo]="todo">
-    <li>
-        {{ todo.title }}
-    </li>
-</app-todo-item>
+<!-- <app-to-dos *ngFor = "let todo of todos" [todo]="todo"> -->
+
+    <div *ngFor="let todo of todos">
+        <li *ngIf="normal" class="normal">
+            {{ todo.title }}
+        </li>
+    </div>
+    <br>
+    <div *ngFor="let todo of importantTodos" class="important">
+        <li *ngIf="important">
+            {{ todo.title }}
+        </li>
+    </div>
+
+
+<!-- </app-to-dos> -->
