@@ -51,11 +51,13 @@ describe('ToDosComponent', () => {
   
   it('should display the right number of normal todos', () => {
     expect(component.todos.length).toEqual(3);
+    // add check for html to see how many li elements rather than todo length
     // add check to verify html is properly formed with correct number of todo divs
     // testNormalTodoCount, "the number of normal todos should be the passed value"
   });
 
   it('should display the right number of important todos', () => {
+    
     expect(component.importantTodos.length).toEqual(3);
     // add check to verify html is properly formed with correct number of todo divs
   });
@@ -72,9 +74,9 @@ describe('ToDosComponent', () => {
   it('should not display normal todos when normal displayflag is false', () => {
     component.normal = false; 
     fixture.detectChanges();
-    const normalElement = fixture.debugElement.query(By.css('.normal')).nativeElement;
-    console.log(normalElement.innerHTML);
-    expect(normalElement.innerHTML).toBeNull();
+    const normalElement = fixture.debugElement.query(By.css('.normal'));
+    console.log(normalElement);
+    expect(normalElement).toBeNull();
     // expect(normalElement.innerHTML.length).toEqual(0);
   });
 
@@ -84,16 +86,6 @@ describe('ToDosComponent', () => {
 
   // it('should not display any todos when both displayflags are false', () => {
   //   // define expectation for checking html for both important and normal todos
-  // });
-
-    // it('should display the right number of normal todos', () => {
-  //   testNormalTodoCount = 3;
-  //   let normalTodosToInject = new TodoComponentTestUtility();
-  //   normalTodosToInject.buildTodos(testNormalTodoCount);
-  //   console.log(normalTodosToInject.buildTodos);
-  //   expect(normalTodosToInject.buildTodos).toEqual(2);
-  //   add check to verify html is properly formed with correct number of todo divs
-  //   testNormalTodoCount, "the number of normal todos should be the passed value"
   // });
 });
 
@@ -116,4 +108,4 @@ describe('ToDosComponent', () => {
 //   get id (): number {
 //     return ++this.idCounter;
 //   }
-// }
+

@@ -14,7 +14,7 @@ export class ToDosComponent implements OnInit {
  important: boolean = true;
 
   constructor(private todoService:TodoService) { 
-    this.todos = this.todoService.getTodos();
+    this.todos = this.todoService.getTodos(3);
     this.importantTodos = this.todoService.getImportantTodos();
   }
 
